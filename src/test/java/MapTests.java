@@ -62,4 +62,11 @@ class MapTests {
         Assertions.assertEquals("Português (Brasil)", map.get("pt-BR"));
     }
 
+    @Test
+    void itShouldReturnNullIfItemIsNotInTheMap() {
+        var map = makeMap();
+
+        Assertions.assertNull(map.get("pt-BR"));
+    }
+
 }
