@@ -69,4 +69,14 @@ class MapTests {
         Assertions.assertNull(map.get("pt-BR"));
     }
 
+    @Test
+    void itShouldInsertAnItemWithANullKey() {
+        var map = makeMap();
+
+        map.put(null, "Nullable");
+        map.put(null, "Nullable 2");
+
+        Assertions.assertEquals("Nullable 2", map.get(null));
+    }
+
 }
